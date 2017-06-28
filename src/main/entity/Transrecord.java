@@ -11,21 +11,35 @@ public class Transrecord {
    private String cardnumber;
    private BigDecimal transamount;
    private BigDecimal balance;
-   private String currency;
    private Date transtime;
+   private Integer transprovince;
+   private Integer transcity;
+   private Integer transregion;
    private Integer transkind;
 
-    @Override
-    public String toString() {
-        return "Transrecord{" +
-                "id=" + id +
-                ", cardnumber='" + cardnumber + '\'' +
-                ", transamount=" + transamount +
-                ", balance=" + balance +
-                ", currency='" + currency + '\'' +
-                ", transtime=" + transtime +
-                ", transkind=" + transkind +
-                '}';
+
+    public Integer getTransprovince() {
+        return transprovince;
+    }
+
+    public void setTransprovince(Integer transprovince) {
+        this.transprovince = transprovince;
+    }
+
+    public Integer getTranscity() {
+        return transcity;
+    }
+
+    public void setTranscity(Integer transcity) {
+        this.transcity = transcity;
+    }
+
+    public Integer getTransregion() {
+        return transregion;
+    }
+
+    public void setTransregion(Integer transregion) {
+        this.transregion = transregion;
     }
 
     public Integer getId() {
@@ -58,14 +72,6 @@ public class Transrecord {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
     }
 
     public Date getTranstime() {

@@ -23,14 +23,14 @@ public class DBConnection {
         this.DBPass = DBPass;
         try {
             Class.forName(this.DBDriver);
-            System.out.println("DBDriver装载完成");
+//            System.out.println("DBDriver装载完成");
         } catch (Exception e) {
             e.printStackTrace();
         }
         try {
             this.connection= DriverManager.getConnection(this.DBURL,this.DBUser,this.DBPass);
             this.connection.setAutoCommit(false);
-            System.out.println("DB连接成功");
+//            System.out.println("DB连接成功");
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class DBConnection {
     public void setPreparedStatement(String sql) {
         try{
             this.preparedStatement=this.connection.prepareStatement(sql);
-            System.out.println("sql语句："+this.preparedStatement);
+//            System.out.println("sql语句："+this.preparedStatement);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -74,7 +74,7 @@ public class DBConnection {
         try {
             this.connection.close();
             this.preparedStatement.close();
-            System.out.println("DB连接关闭");
+//            System.out.println("DB连接关闭");
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -7,7 +7,7 @@ import main.service.UserServiceImpl;
  * Created by 71903 on 2017/5/14.
  */
 public class MapperTest {
-//    private static UserMapper userMapper=null;
+    //    private static UserMapper userMapper=null;
 //    public static void setMapper(){
 //        if (userMapper==null){
 //            userMapper=new UserMapperImpl();
@@ -31,13 +31,24 @@ public class MapperTest {
 //            areasMapper=new AreasMapperImpl();
 //        }
 //    }
-    public static void main(String[] args){
+    public static void main(String[] args) {
+//        String password="123qwe";
+//        try {
+//            System.out.print(getMessageDigset(password.getBytes("UTF8")));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
-
+        int i;
         UserService service=new UserServiceImpl();
-        service.signIn();
+        i=service.signIn();
+        System.out.println(i);
+        i=service.transactionRecord();
+        System.out.println(i);
+//        System.out.println(i);
+//        service.signIn();
 //        service.userCards();
-        service.cardBalance();
+//        service.userInfo();
 //        Areas areas=new Areas();
 //        List<Areas> areass=new LinkedList<Areas>();
 //        areas.setParentid(110100);

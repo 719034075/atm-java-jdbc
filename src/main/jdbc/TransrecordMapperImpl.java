@@ -73,9 +73,11 @@ public class TransrecordMapperImpl implements TransrecordMapper {
             transrecord.setCardnumber(resultSet.getString(2));
             transrecord.setTransamount(resultSet.getBigDecimal(3));
             transrecord.setBalance(resultSet.getBigDecimal(4));
-            transrecord.setCurrency(resultSet.getString(5));
-            transrecord.setTranstime(resultSet.getDate(6));
-            transrecord.setTranskind(resultSet.getInt(7));
+            transrecord.setTransprovince(resultSet.getInt(5));
+            transrecord.setTranscity(resultSet.getInt(6));
+            transrecord.setTransregion(resultSet.getInt(7));
+            transrecord.setTranstime(resultSet.getDate(8));
+            transrecord.setTranskind(resultSet.getInt(9));
             transrecords.add(transrecord);
         }
         connection.closeConnection();
@@ -96,8 +98,14 @@ public class TransrecordMapperImpl implements TransrecordMapper {
         if(transrecord.getBalance()!=null){
             sql+="balance,";
         }
-        if(transrecord.getCurrency()!=null){
-            sql+="currency,";
+        if(transrecord.getTransprovince()!=null){
+            sql+="transprovince,";
+        }
+        if(transrecord.getTranscity()!=null){
+            sql+="transcity,";
+        }
+        if(transrecord.getTransregion()!=null){
+            sql+="transregion,";
         }
         if(transrecord.getTranstime()!=null){
             sql+="transtime,";
@@ -122,8 +130,14 @@ public class TransrecordMapperImpl implements TransrecordMapper {
         if(transrecord.getBalance()!=null){
             sql+="'"+transrecord.getBalance()+"',";
         }
-        if(transrecord.getCurrency()!=null){
-            sql+="'"+transrecord.getCurrency()+"',";
+        if(transrecord.getTransprovince()!=null){
+            sql+="'"+transrecord.getTransprovince()+"',";
+        }
+        if(transrecord.getTranscity()!=null){
+            sql+="'"+transrecord.getTranscity()+"',";
+        }
+        if(transrecord.getTransregion()!=null){
+            sql+="'"+transrecord.getTransregion()+"',";
         }
         if(transrecord.getTranstime()!=null){
             sql+="'"+transrecord.getTranstime()+"',";
@@ -152,8 +166,14 @@ public class TransrecordMapperImpl implements TransrecordMapper {
         if(transrecord.getBalance()!=null){
             sql+="balance='"+transrecord.getBalance()+"',";
         }
-        if(transrecord.getCurrency()!=null){
-            sql+="currency='"+transrecord.getCurrency()+"',";
+        if(transrecord.getTransprovince()!=null){
+            sql+="transprovince='"+transrecord.getTransprovince()+"',";
+        }
+        if(transrecord.getTranscity()!=null){
+            sql+="transcity='"+transrecord.getTranscity()+"',";
+        }
+        if(transrecord.getTransregion()!=null){
+            sql+="transregion='"+transrecord.getTransregion()+"',";
         }
         if(transrecord.getTranstime()!=null){
             sql+="transtime='"+transrecord.getTranstime()+"',";
@@ -188,8 +208,14 @@ public class TransrecordMapperImpl implements TransrecordMapper {
         if(transrecord.getBalance()!=null){
             subsql+="and balance='"+transrecord.getBalance()+"' ";
         }
-        if(transrecord.getCurrency()!=null){
-            subsql+="and currency='"+transrecord.getCurrency()+"' ";
+        if(transrecord.getTransprovince()!=null){
+            sql+="and transprovince='"+transrecord.getTransprovince()+"' ";
+        }
+        if(transrecord.getTranscity()!=null){
+            sql+="and transcity='"+transrecord.getTranscity()+"' ";
+        }
+        if(transrecord.getTransregion()!=null){
+            sql+="and transregion='"+transrecord.getTransregion()+"' ";
         }
         if(transrecord.getTranstime()!=null){
             subsql+="and transtime='"+transrecord.getTranstime()+"' ";

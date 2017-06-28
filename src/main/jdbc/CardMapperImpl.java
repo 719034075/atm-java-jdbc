@@ -74,8 +74,7 @@ public class CardMapperImpl implements CardMapper {
             card.setId(resultSet.getInt(1));
             card.setCardnumber(resultSet.getString(2));
             card.setBalance(resultSet.getBigDecimal(3));
-            card.setCurrency(resultSet.getString(4));
-            card.setCardholderid(resultSet.getInt(5));
+            card.setCardholderid(resultSet.getInt(4));
             cards.add(card);
         }
         connection.closeConnection();
@@ -93,9 +92,6 @@ public class CardMapperImpl implements CardMapper {
         if(card.getBalance()!=null){
             sql+="balance,";
         }
-        if(card.getCurrency()!=null){
-            sql+="currency,";
-        }
         if(card.getCardholderid()!=null){
             sql+="cardholderid,";
         }
@@ -111,9 +107,6 @@ public class CardMapperImpl implements CardMapper {
         }
         if(card.getBalance()!=null){
             sql+="'"+card.getBalance()+"',";
-        }
-        if(card.getCurrency()!=null){
-            sql+="'"+card.getCurrency()+"',";
         }
         if(card.getCardholderid()!=null){
             sql+="'"+card.getCardholderid()+"',";
@@ -135,9 +128,6 @@ public class CardMapperImpl implements CardMapper {
         }
         if(card.getBalance()!=null){
             sql+="balance='"+card.getBalance()+"',";
-        }
-        if(card.getCurrency()!=null){
-            sql+="currency='"+card.getCurrency()+"',";
         }
         if(card.getCardholderid()!=null){
             sql+="cardholderid='"+card.getCardholderid()+"',";
@@ -165,9 +155,6 @@ public class CardMapperImpl implements CardMapper {
         }
         if(card.getBalance()!=null){
             subsql+="and balance='"+card.getBalance()+"' ";
-        }
-        if(card.getCurrency()!=null){
-            subsql+="and currency='"+card.getCurrency()+"' ";
         }
         if(card.getCardholderid()!=null){
             subsql+="and cardholderid='"+card.getCardholderid()+"' ";

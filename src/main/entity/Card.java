@@ -9,7 +9,6 @@ public class Card {
     private Integer id;
     private String cardnumber;
     private BigDecimal balance;
-    private String currency;
     private Integer cardholderid;
 
     @Override
@@ -18,7 +17,6 @@ public class Card {
                 "id=" + id +
                 ", cardnumber='" + cardnumber + '\'' +
                 ", balance=" + balance +
-                ", currency='" + currency + '\'' +
                 ", cardholderid=" + cardholderid +
                 '}';
     }
@@ -45,14 +43,6 @@ public class Card {
 
     public void setBalance(BigDecimal balance) {
         this.balance = balance;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(String currency) {
-        this.currency = currency;
     }
 
     public Integer getCardholderid() {
